@@ -1,8 +1,8 @@
-import "../components/Counter.scss";
+import classes from "../components/Counter.module.scss";
 
 export const Counter = () => {
   return (
-    <div>
+    <div className={classes.button}>
       <button>Hello</button>
     </div>
   );
