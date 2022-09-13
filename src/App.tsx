@@ -1,12 +1,23 @@
+import { Suspense } from "react";
+import { Link } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Counter } from "./components/Counter";
 
 import "./index.scss";
+import { AboutAsync } from "./pages/About/index.async";
+import { MainAsync } from "./pages/Main/index.async";
 
 export const App = () => {
   return (
     <div className="app">
-      fdfdffsfs
-      <Counter />
+      <Link to="/">Main</Link>
+      <Link to="/about">About</Link>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path={"/about"} element={<AboutAsync />} />
+          <Route path={"/"} element={<MainAsync />} />
+        </Routes>
+      </Suspense>
     </div>
   );
 };
