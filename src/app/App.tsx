@@ -6,11 +6,11 @@ import { AppRouter } from "./providers/router";
 import { Navbar } from "widgets/NavBar";
 
 export const App = () => {
-  const [theme, toggleTheme] = useTheme();
+  const [theme] = useTheme();
 
   return (
     <div className={classNames("app", {}, [theme])}>
-      <button onClick={toggleTheme}>Toggle</button>
+      {/* <button onClick={toggleTheme}>Toggle</button> */}
       <Navbar />
       <AppRouter />
     </div>
