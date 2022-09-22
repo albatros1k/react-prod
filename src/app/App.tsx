@@ -9,13 +9,14 @@ import { classNames } from "shared/lib/classNames";
 import { AppRouter } from "./providers/router";
 import { Navbar } from "widgets/NavBar";
 import { Sidebar } from "widgets/Sibebar";
+import { PageLoader } from "widgets/Loader/Loader";
 
 export const App = () => {
   const [theme] = useTheme();
 
   return (
     <div className={classNames("app", {}, [theme])}>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<PageLoader />}>
         <Navbar />
         <div className="content-page">
           <Sidebar />
